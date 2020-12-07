@@ -1,9 +1,10 @@
 import React,{useState} from "react"
 import { errorsProps } from "../types";
+import { checkValues ,isThereAnyError } from "../utils"
+
 const useForm = () => {
     const [userInformation, setUserInformation] = useState({userName: "", password: "" });
     
-
 const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setUserInformation({ ...userInformation, [name]: value });
