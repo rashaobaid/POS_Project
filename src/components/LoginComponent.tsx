@@ -31,7 +31,7 @@ const LogInComponent: React.FunctionComponent<WithStyles<typeof styles>> = (
   props
 ) => {
   const { classes } = props;
-  const { handleChange, handleSubmit, userInformation} = userForm();
+  const { handleChange, handleSubmit, userInformation,errors} = userForm();
 
   return (
     <Grid
@@ -84,6 +84,8 @@ const LogInComponent: React.FunctionComponent<WithStyles<typeof styles>> = (
                       variant="outlined"
                       className={classes.textField}
                       autoFocus
+                      error={errors.flagForuserNameErrors}
+                      helperText={errors.userNameError}
                     />
                   </Grid>
                   <Grid item>
@@ -96,6 +98,8 @@ const LogInComponent: React.FunctionComponent<WithStyles<typeof styles>> = (
                       onChange={handleChange}
                       variant="outlined"
                       className={classes.textField}
+                      error={errors.flagForPasswordError}
+                      helperText={errors.passwordError}
                     />
                   </Grid>
                   <Grid item>
